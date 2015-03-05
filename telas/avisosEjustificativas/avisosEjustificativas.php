@@ -13,7 +13,7 @@ if (!isset($_GET['opcao'])) {
                     <span class="help-block">Selecione um grupo de usuário ou um usuário específico pra quem você deseja enviar o aviso.</span>
                     <div class="row-fluid">
                         <div class="span6"> 
-                            <select>
+                            <select id="Aviso" Name="aviso">
                                 <option>Selecione</option>
                                 <option>Professor2</option>
                                 <option>Professor3</option>
@@ -27,13 +27,15 @@ if (!isset($_GET['opcao'])) {
                         </div>
                         <div class="span6 justifica"></div>
                     </div>
+                    <span class="help-block" >Escreva o titulo do aviso.</span>
+                    <input type="text" placeholder="Titulo do aviso" name="tituloAviso" id="tituloaviso"/>
                     <span class="help-block">Escreva o conteúdo do aviso.</span>
                     <?php if ($temErros && isset($errosValidacao['conteudoAviso'])) : ?>
                         <span class="erro">
                             <?php echo $errosValidacao['conteudoAviso']; ?>
                         </span>
                     <?php endif; ?>
-                    <textarea placeholder="Conteúdo..." rows="5" value="<?php echo $dadosAviso['conteudoAviso']?>" name="conteudoAviso" class="input-block-level"></textarea><br />
+                    <textarea placeholder="Conteúdo..." rows="5" value="<?php echo $dadosAviso['conteudoAviso']?>" name="conteudoAviso" id="conteudoAviso" class="input-block-level"></textarea><br />
                     <input type="hidden" name="cadNovoAviso"/>
                     <button type="submit" class="btn btn-success"><span class="fa-checkmark"></span> Enviar aviso</button>
 
